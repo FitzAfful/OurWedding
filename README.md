@@ -1,0 +1,2 @@
+# OurWedding
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c100506d5bec4331b880d0db423128cf)](https://app.codacy.com/app/fitzafful/OurWedding?utm_source=github.com&utm_medium=referral&utm_content=FitzAfful/OurWedding&utm_campaign=Badge_Grade_Dashboard)
