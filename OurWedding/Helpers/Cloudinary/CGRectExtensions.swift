@@ -24,7 +24,6 @@ import UIKit
 
 /// Extensions to the CGRect class.
 public extension CGRect {
-    
     /**
     Returns a scaled version of the rect. The rect will be scaled around it's
     midpoint.

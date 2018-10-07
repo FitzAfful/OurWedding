@@ -32,7 +32,6 @@ public let QCSAllOperationsCompleted = "QCSAllOperationsCompleted"
 open class CloudinaryService {
     /// Upload response datatype
     public typealias UploadResponse = (success: Bool, url: String?, width: Int?, height: Int?)
-    
     /// Cloudinary API facade
     fileprivate var cloudinary: CLCloudinary?
     

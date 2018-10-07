@@ -10,7 +10,6 @@ import UIKit
 
 class HomepageCell: UICollectionViewCell {
 
-	
 	@IBOutlet weak var mainLabel: UILabel!
 	@IBOutlet weak var img: UIImageView!
 	

@@ -11,6 +11,7 @@ import UIKit
 class OurStoryViewController: UITableViewController {
 
 	@IBOutlet weak var carouselView: UIView!
+	
 	override func viewDidLoad() {
         super.viewDidLoad()
 

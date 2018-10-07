@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import UIKit
-
 /// Extensions to CGSize type
 public extension CGSize {    
     /**
