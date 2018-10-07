@@ -6,10 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="proxima-nova.otf">
+            <string>ProximaNova-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Sign In Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -65,70 +69,69 @@
             <point key="canvasLocation" x="-1364" y="-547"/>
         </scene>
         <!--Our Story-->
-        <scene sceneID="YNL-lk-jFL">
+        <scene sceneID="qN1-fQ-h9H">
             <objects>
-                <viewController id="z8J-OC-nM1" customClass="OurStoryViewController" customModule="OurWedding" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="OG3-O6-nkC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="715"/>
+                <tableViewController id="R4M-As-vji" customClass="OurStoryViewController" customModule="OurWedding" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Zm-Fy-dx9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fib-v4-Pei">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="fvA-92-ATv"/>
-                                </constraints>
-                            </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4B-SL-4Pb">
-                                <rect key="frame" x="0.0" y="249" width="375" height="466"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9S-bg-dVw">
-                                        <rect key="frame" x="8" y="8" width="359" height="588.5"/>
-                                        <string key="text">Raindolf Owusu is a Software Engineer and mans Wiliams is a Lawyer
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="3H2-Jp-gZE">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="250" id="Vzx-s6-d5b">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vzx-s6-d5b" id="5Nw-ra-m6G">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="em5-dD-vqa">
+                                                    <rect key="frame" x="0.0" y="-1" width="375" height="250"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="600" id="z2x-2C-ciN">
+                                        <rect key="frame" x="0.0" y="250" width="375" height="600"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z2x-2C-ciN" id="wy0-5X-SUQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="599.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vR-Bz-vM5">
+                                                    <rect key="frame" x="9" y="0.0" width="358" height="508"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <mutableString key="text">"The first time I saw him, we were sitting at the gate for our flight to Chicago. I remember glancing over at him and thinking, Oh, wow, he's cute. When I got to my seat, I saw that the seat beside me was empty and thought, How awesome would it be if he ended up next to me?
 
-Mansa came into the life of Raindolf Owes on 15th of June, 2015. They had a long distance friendship for a few months before they met for the first time in Ghana on the 10th of October, 2015. Their bond grew stronger after their first meeting and they began to spend their weekends together.
+Sure enough, a family in his row wanted to sit together so he asked the flight attendant if he could take the empty seat beside me. We spent the entire flight discussing everything. And then, the flight landed.
 
-Raindolf took Mansa to Pan African centered concerts like Sabolai Radio and Batakari Night and she took him to Church! He renewed his faith in God and they both allowed God to guide their steps. Their love grew stronger with each passing day and two years layer, on the 17th of June, 2017, Raindolf proposed to Mansa and she accepted!
-
-God has been the driving force behind their love and commitment. On the 7th of October 2017, Raindolf and Mansa had their traditional marriage ceremony at Osu in Accra.
-
-Their wedding will take place on the 16th of December, 2017 and they look forward to sharing this special occasion with their dear friends and family.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="g9S-bg-dVw" secondAttribute="trailing" constant="8" id="1wN-jU-Pfm"/>
-                                    <constraint firstItem="g9S-bg-dVw" firstAttribute="leading" secondItem="H4B-SL-4Pb" secondAttribute="leading" constant="8" id="4ge-v4-cAZ"/>
-                                    <constraint firstItem="g9S-bg-dVw" firstAttribute="top" secondItem="H4B-SL-4Pb" secondAttribute="top" constant="8" id="WVO-kV-tSl"/>
-                                    <constraint firstItem="g9S-bg-dVw" firstAttribute="centerX" secondItem="H4B-SL-4Pb" secondAttribute="centerX" id="jQr-8A-WDU"/>
-                                    <constraint firstItem="g9S-bg-dVw" firstAttribute="bottom" secondItem="H4B-SL-4Pb" secondAttribute="bottomMargin" id="q6Z-GA-bOt"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="H4B-SL-4Pb" firstAttribute="top" secondItem="fib-v4-Pei" secondAttribute="bottom" constant="-1" id="5Cl-Ma-9kp"/>
-                            <constraint firstItem="fib-v4-Pei" firstAttribute="top" secondItem="Xii-18-hCF" secondAttribute="top" id="BeC-Hd-RXn"/>
-                            <constraint firstItem="Xii-18-hCF" firstAttribute="trailing" secondItem="H4B-SL-4Pb" secondAttribute="trailing" id="G1e-Su-xNX"/>
-                            <constraint firstItem="Xii-18-hCF" firstAttribute="bottom" secondItem="H4B-SL-4Pb" secondAttribute="bottom" id="Hxn-DR-7qg"/>
-                            <constraint firstItem="fib-v4-Pei" firstAttribute="leading" secondItem="Xii-18-hCF" secondAttribute="leading" id="I2C-dy-MPi"/>
-                            <constraint firstItem="Xii-18-hCF" firstAttribute="trailing" secondItem="fib-v4-Pei" secondAttribute="trailing" id="RKZ-Un-iPt"/>
-                            <constraint firstItem="H4B-SL-4Pb" firstAttribute="leading" secondItem="Xii-18-hCF" secondAttribute="leading" id="g8i-6n-ovH"/>
-                            <constraint firstItem="fib-v4-Pei" firstAttribute="centerX" secondItem="Xii-18-hCF" secondAttribute="centerX" id="yVu-AA-1jC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Xii-18-hCF"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Our Story" id="ZJW-gy-8pj"/>
-                    <size key="freeformSize" width="375" height="880"/>
+He asked for my number and we went our separate ways. I was certain I would never hear from him again. I thought about him often, but eventually he faded into the 'missed connections' category. A few months later, out of the blue, he sent me [a message that said] 'Happy New Year.' We hit it off like nothing ever changed.</mutableString>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="R4M-As-vji" id="zZe-Lf-zBa"/>
+                            <outlet property="delegate" destination="R4M-As-vji" id="rt4-Ek-32S"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Our Story" id="a8u-qC-BIU"/>
                     <connections>
-                        <outlet property="carouselView" destination="fib-v4-Pei" id="opL-oS-0e1"/>
+                        <outlet property="carouselView" destination="em5-dD-vqa" id="dfy-AL-uZo"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ng6-u8-DoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tdx-B6-qhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="936"/>
+            <point key="canvasLocation" x="904.79999999999995" y="839.73013493253382"/>
         </scene>
         <!--Home-->
         <scene sceneID="yBV-YO-LP7">
@@ -433,7 +436,7 @@ Their wedding will take place on the 16th of December, 2017 and they look forwar
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="z8J-OC-nM1" kind="relationship" relationship="rootViewController" id="cno-UJ-o8b"/>
+                        <segue destination="R4M-As-vji" kind="relationship" relationship="rootViewController" id="7hF-Ze-4fd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1B-Br-vZQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

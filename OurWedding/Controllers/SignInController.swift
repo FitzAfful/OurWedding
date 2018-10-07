@@ -45,10 +45,7 @@ class SignInController: UIViewController, GIDSignInUIDelegate {
 		super.didReceiveMemoryWarning()
 	}
 	
-	
-	
 	func moveToMain(_ credential: FIRAuthCredential){
-		
 		let firebaseHelper = FirebaseHelper()
 		firebaseHelper.signIn(credential: credential, viewController: self)
 	}

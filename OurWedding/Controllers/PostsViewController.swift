@@ -106,7 +106,6 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		
 		cell.userImageView.image = nil
 		cell.postImageView.image = nil
-		print(contact.postimgurl)
 		Nuke.loadImage(with: (URL(string: contact.photourl)!), into: cell.userImageView)
 		makingRoundedImageProfileWithRoundedBorder(imageView: cell.userImageView)
 		Nuke.loadImage(with: (URL(string: contact.postimgurl)!), into: cell.postImageView)

@@ -77,6 +77,7 @@
 		84D23B2C1FE3933D00948F2B /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D23B2B1FE3933D00948F2B /* SignInController.swift */; };
 		84D23B2E1FE3958800948F2B /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D23B2D1FE3958800948F2B /* FirebaseHelper.swift */; };
 		84D23B301FE398C700948F2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84D23B2F1FE398C600948F2B /* GoogleService-Info.plist */; };
+		84F700CE2169995600F70CDC /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F700CD2169995600F70CDC /* MyExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +166,7 @@
 		84D23B2D1FE3958800948F2B /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		84D23B2F1FE398C600948F2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84F700C721697FE200F70CDC /* OurWedding-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OurWedding-Bridging-Header.h"; sourceTree = "<group>"; };
+		84F700CD2169995600F70CDC /* MyExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
 		8FE2D138DDB7AB494B8D60E2 /* Pods_RandM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA46352BDAE075938856576D /* Pods-OurWedding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OurWedding.release.xcconfig"; path = "Pods/Target Support Files/Pods-OurWedding/Pods-OurWedding.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -345,6 +347,7 @@
 				84D23AFB1FE3893000948F2B /* Cloudinary */,
 				84D23AAE1FE371B200948F2B /* ZKCarousel.swift */,
 				84D23A981FE2FA5C00948F2B /* MyTextField.swift */,
+				84F700CD2169995600F70CDC /* MyExtensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				84D23AB81FE387CB00948F2B /* Utils.swift in Sources */,
 				84D23AEC1FE3885800948F2B /* CLCloudinary.m in Sources */,
 				84D23A9C1FE3054300948F2B /* HomeCell.swift in Sources */,
+				84F700CE2169995600F70CDC /* MyExtensions.swift in Sources */,
 				84D23B261FE389FA00948F2B /* PrePostFixLogFormatter.swift in Sources */,
 				84D23AF61FE3885800948F2B /* CLLayer.m in Sources */,
 				84D23B1F1FE389FA00948F2B /* FileNameFilter.swift in Sources */,

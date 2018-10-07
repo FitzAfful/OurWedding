@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import Firebase
+import FirebaseStorage
 import DTPhotoViewerController
 import FTIndicator
 import SystemConfiguration
@@ -43,24 +44,56 @@ class AddPostController: UIViewController, UIImagePickerControllerDelegate,UIAct
 			if(isConnectedToNetwork()){
 				FTIndicator.setIndicatorStyle(UIBlurEffectStyle.dark)
 				FTIndicator.showProgress(withMessage: "Uploading Image")
-				let cloudinaryService = CloudinaryService(configUrl: "cloudinary://254856234963126:K4J4-SqINaM9K3Iuwt2dQRF7VCY@dpsqzxx6l")
-				
-				cloudinaryService.upload(image: imageView.image!, progressCallback: { (progress) in
-					//handle progress
-				}, completionCallback: { (uploadResponse) in
-					print(uploadResponse)
-					if(uploadResponse.success == true){
-						self.doneCloudinary(url: uploadResponse.url!)
-					}else{
-						FTIndicator.dismissProgress()
-						FTIndicator.showToastMessage("Unable to upload image. Please try again")
-					}
-				})
+				//CHOOSE BETWEEN CLOUDINARY UPLOAD / FIREBASE UPLOAD
+				//self.cloudinaryUpload()
+				self.firebaseStorageUpload()
 			}else{
 				FTIndicator.showToastMessage("No Internet Connection. Please check and try again.")
 			}
 		}else{
 			FTIndicator.showToastMessage("Kindly attach an image")
+		}
+	}
+	
+	func cloudinaryUpload(){
+		let cloudinaryService = CloudinaryService(configUrl: "cloudinary://254856234963126:K4J4-SqINaM9K3Iuwt2dQRF7VCY@dpsqzxx6l")
+		
+		cloudinaryService.upload(image: imageView.image!, progressCallback: { (progress) in
+			//handle progress
+		}, completionCallback: { (uploadResponse) in
+			print(uploadResponse)
+			if(uploadResponse.success == true){
+				self.doneUploading(url: uploadResponse.url!)
+			}else{
+				FTIndicator.dismissProgress()
+				FTIndicator.showToastMessage("Unable to upload image. Please try again")
+			}
+		})
+	}
+	
+	func firebaseStorageUpload(){
+		let storageRef = FIRStorage().reference().child("images")
+		let data = UIImageJPEGRepresentation(self.imageView.image!, 0.9)!
+		let metadata1 = FIRStorageMetadata()
+		metadata1.contentType = "image/jpeg"
+		let riversRef = storageRef.child("\(randomString(length: 15)).jpg")
+		_ = riversRef.put(data, metadata: metadata1) { (metadata, error) in
+			guard metadata != nil else {
+				print("First Error")
+				print(error!)
+				FTIndicator.dismissProgress()
+				FTIndicator.showToastMessage("Unable to upload image. Please try again")
+				return
+			}
+			riversRef.downloadURL { (url, error) in
+				guard let downloadURL = url else {
+					print("Second Error")
+					FTIndicator.dismissProgress()
+					FTIndicator.showToastMessage("Unable to upload image. Please try again")
+					return
+				}
+				self.doneUploading(url: downloadURL.absoluteString)
+			}
 		}
 	}
 	
@@ -90,7 +123,7 @@ class AddPostController: UIViewController, UIImagePickerControllerDelegate,UIAct
 	
 	func actionSheet( _ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
 		
-		if( buttonIndex == 1){//Report Post
+		if( buttonIndex == 1){
 			self.shootPhoto()
 		} else if(buttonIndex == 2){
 			self.photoFromLibrary()
@@ -99,18 +132,16 @@ class AddPostController: UIViewController, UIImagePickerControllerDelegate,UIAct
 		}
 	}
 	
-	func doneCloudinary(url:String){
+	func doneUploading(url:String){
 		print(url)
-		//Post to firebase
 		let nr = (100 ... 200).randomInt
-		let currentTimeStamp = Date().toMillis() + nr
+		let currentTimeStamp = Int(Date().toMillis()) + nr
 		
 		let user_profile = self.userProfiles.child("\(currentTimeStamp)")
 		user_profile.observeSingleEvent(of: .value, with: { (snapshot) in
 			let snapshot = snapshot.value as? NSDictionary
 			if(snapshot == nil)
 			{
-				print(currentTimeStamp)
 				user_profile.child("message").setValue(self.postTextField.text!)
 				user_profile.child("photourl").setValue(self.user?.photoURL!.absoluteString)
 				user_profile.child("postimgurl").setValue(url)
@@ -124,14 +155,12 @@ class AddPostController: UIViewController, UIImagePickerControllerDelegate,UIAct
 	
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
 		
-		print("image attached")
 		imageView.image = image
 		image1 = 1
 		picker.dismiss(animated: true, completion: nil)
 	}
 	
 	
-	//What to do if the image picker cancels.
 	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
 		dismiss(animated: true, completion: nil)
 	}
@@ -145,18 +174,12 @@ class AddPostController: UIViewController, UIImagePickerControllerDelegate,UIAct
 		
 	}
 	
-	//MARK: - Actions
-	//get a photo from the library. We present as! a popover on iPad, and fullscreen on smaller devices.
 	func photoFromLibrary() {
-		picker.allowsEditing = true //2
-		picker.sourceType = .photoLibrary //3
-		//picker.modalPresentationStyle = .Popover
-		present(picker, animated: true, completion: nil)//4
-		//picker.popoverPresentationController?.barButtonItem = sender
+		picker.allowsEditing = true
+		picker.sourceType = .photoLibrary
+		present(picker, animated: true, completion: nil)
 	}
 	
-	
-	//take a picture, check if we have a camera first.
 	func shootPhoto() {
 		if UIImagePickerController.availableCaptureModes(for: .rear) != nil {
 			picker.allowsEditing = true
@@ -169,50 +192,4 @@ class AddPostController: UIViewController, UIImagePickerControllerDelegate,UIAct
 	}
 }
 
-public func isConnectedToNetwork() -> Bool {
-	var zeroAddress = sockaddr_in()
-	zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
-	zeroAddress.sin_family = sa_family_t(AF_INET)
-	
-	let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
-		$0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
-			SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
-		}
-	}
-	
-	var flags = SCNetworkReachabilityFlags()
-	if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
-		return false
-	}
-	let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
-	let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
-	return (isReachable && !needsConnection)
-}
-
-extension Date {
-	func toMillis() -> Int64! {
-		return Int64(self.timeIntervalSince1970 * 1000)
-	}
-}
-
-extension CountableClosedRange
-{
-	var randomInt: Int
-	{
-		get
-		{
-			var offset = 0
-			
-			if (lowerBound as! Int) < 0   // allow negative ranges
-			{
-				offset = abs(lowerBound as! Int)
-			}
-			
-			let mini = UInt32(lowerBound as! Int + offset)
-			let maxi = UInt32(upperBound   as! Int + offset)
-			
-			return Int(mini + arc4random_uniform(maxi - mini)) - offset
-		}
-	}
-}
 

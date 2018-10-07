@@ -84,7 +84,7 @@ public extension String {
         let start = self.characters.index(self.startIndex, offsetBy: startIndex)
         let end = self.characters.index(self.startIndex, offsetBy: startIndex + length)
         
-        return self[start..<end]
+		return String(self[start..<end])
     }
     
     /**
@@ -95,7 +95,7 @@ public extension String {
     */
     public func substring(startIndex: Int) -> String {
         let start = self.characters.index(self.startIndex, offsetBy: startIndex)
-        return self[start..<self.endIndex]
+		return String(self[start..<self.endIndex])
     }
 
     /**
@@ -118,7 +118,7 @@ public extension String {
         let start = characters.index(startIndex, offsetBy: r.lowerBound)
         let end = characters.index(start, offsetBy: r.upperBound - r.lowerBound)
         
-        return self[Range(start ..< end)]
+		return String(self[Range(start ..< end)])
     }
 
     /**
@@ -153,7 +153,7 @@ public extension String {
      - returns: the bounding rectangle required to draw the string
      */
     public func boundingRectWithFont(_ font: UIFont, constrainedToSize size: CGSize = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)) -> CGRect {
-        let attributedString = NSAttributedString(string: self, attributes: [NSFontAttributeName: font])
+		let attributedString = NSAttributedString(string: self, attributes: [(kCTFontAttributeName as NSAttributedStringKey) as String: font])
         return attributedString.boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
     }
 
