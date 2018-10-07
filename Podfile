@@ -9,6 +9,7 @@ inhibit_all_warnings!
 target ‘OurWedding’ do
     pod 'Alamofire', '~> 4.0'
     pod 'Nuke', '~> 5.2'
+	pod 'INSPhotoGallery'
     pod 'NSDate+TimeAgo'
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'

@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 		let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!, accessToken: (authentication?.accessToken)!)
 		
 		FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-			print("User Signed Into Firebase")
+			print("User has been signed into Firebase")
 			self.databaseRef = FIRDatabase.database().reference()
 			
 			let user_profile = FIRDatabase.database().reference().child("user_profiles").child(user!.uid)
@@ -59,8 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 					user_profile.child("email").setValue(user?.providerData[0].email)
 					user_profile.child("photourl").setValue(user?.photoURL)
 				}
-				
-				print("Navigation Controller")
+			
 				FTIndicator.dismissProgress()
 				self.window!.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TabController")
 			})

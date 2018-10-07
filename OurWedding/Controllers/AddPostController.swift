@@ -61,7 +61,6 @@ class AddPostController: UIViewController, UIImagePickerControllerDelegate,UIAct
 		cloudinaryService.upload(image: imageView.image!, progressCallback: { (progress) in
 			//handle progress
 		}, completionCallback: { (uploadResponse) in
-			print(uploadResponse)
 			if(uploadResponse.success == true){
 				self.doneUploading(url: uploadResponse.url!)
 			}else{
@@ -72,22 +71,18 @@ class AddPostController: UIViewController, UIImagePickerControllerDelegate,UIAct
 	}
 	
 	func firebaseStorageUpload(){
-		let storageRef = FIRStorage().reference().child("images")
+		let storageRef = FIRStorage.storage().reference(withPath: "images/\(randomString(length: 15)).jpg")
 		let data = UIImageJPEGRepresentation(self.imageView.image!, 0.9)!
 		let metadata1 = FIRStorageMetadata()
 		metadata1.contentType = "image/jpeg"
-		let riversRef = storageRef.child("\(randomString(length: 15)).jpg")
-		_ = riversRef.put(data, metadata: metadata1) { (metadata, error) in
+		_ = storageRef.put(data, metadata: metadata1) { (metadata, error) in
 			guard metadata != nil else {
-				print("First Error")
-				print(error!)
 				FTIndicator.dismissProgress()
 				FTIndicator.showToastMessage("Unable to upload image. Please try again")
 				return
 			}
-			riversRef.downloadURL { (url, error) in
+			storageRef.downloadURL { (url, error) in
 				guard let downloadURL = url else {
-					print("Second Error")
 					FTIndicator.dismissProgress()
 					FTIndicator.showToastMessage("Unable to upload image. Please try again")
 					return
@@ -133,7 +128,6 @@ class AddPostController: UIViewController, UIImagePickerControllerDelegate,UIAct
 	}
 	
 	func doneUploading(url:String){
-		print(url)
 		let nr = (100 ... 200).randomInt
 		let currentTimeStamp = Int(Date().toMillis()) + nr
 		

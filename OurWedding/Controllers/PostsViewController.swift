@@ -38,7 +38,6 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 					post.postid = Int.init(snapDict.key)!
 					post.setValuesForKeys(dict)
 					self.posts.append(post)
-					
 				}
 				self.posts = self.posts.reversed()
 				self.tableView.isHidden = false
@@ -136,12 +135,14 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		}
 	}
 	
-	class Post: NSObject {
-		var postid: Int = 0
-		var postimgurl: String = ""
-		var message: String = ""
-		var photourl: String = ""
-		var username: String = ""
-	}
+	
 
+}
+
+class Post: NSObject {
+	var postid: Int = 0
+	var postimgurl: String = ""
+	var message: String = ""
+	var photourl: String = ""
+	var username: String = ""
 }

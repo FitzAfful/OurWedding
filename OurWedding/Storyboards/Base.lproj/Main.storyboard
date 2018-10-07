@@ -23,11 +23,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="WlH-nt-urr">
-                                <rect key="frame" x="16" y="191" width="343" height="225"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="WlH-nt-urr">
+                                <rect key="frame" x="87" y="215" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="225" id="WOK-C5-J88"/>
+                                    <constraint firstAttribute="height" constant="200" id="OgS-G6-NqN"/>
+                                    <constraint firstAttribute="width" constant="200" id="mxB-KV-lUh"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rce-yM-wgO">
                                 <rect key="frame" x="37" y="461" width="300" height="50"/>
@@ -36,7 +42,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Hme-f0-Gcl"/>
                                     <constraint firstAttribute="width" constant="300" id="sJS-Rs-tKL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                 <color key="tintColor" red="0.99987119440000005" green="0.99998223779999995" blue="0.99984109399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Sign in with Google"/>
                                 <userDefinedRuntimeAttributes>
@@ -52,11 +58,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="WlH-nt-urr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7tD-h3-ozg"/>
                             <constraint firstItem="Rce-yM-wgO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CMm-1z-gWw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WlH-nt-urr" secondAttribute="trailing" constant="16" id="DcU-fB-dp5"/>
-                            <constraint firstItem="Rce-yM-wgO" firstAttribute="top" secondItem="WlH-nt-urr" secondAttribute="bottom" constant="45" id="YN6-fO-owb"/>
-                            <constraint firstItem="WlH-nt-urr" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="bKH-iF-zQt"/>
+                            <constraint firstItem="WlH-nt-urr" firstAttribute="centerX" secondItem="Rce-yM-wgO" secondAttribute="centerX" id="Joc-MH-Wan"/>
+                            <constraint firstItem="Rce-yM-wgO" firstAttribute="top" secondItem="WlH-nt-urr" secondAttribute="bottom" constant="46" id="ca3-0f-1m9"/>
+                            <constraint firstItem="WlH-nt-urr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="195" id="fUk-s3-3Au"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -72,8 +77,8 @@
         <scene sceneID="qN1-fQ-h9H">
             <objects>
                 <tableViewController id="R4M-As-vji" customClass="OurStoryViewController" customModule="OurWedding" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Zm-Fy-dx9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Zm-Fy-dx9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -104,11 +109,11 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vR-Bz-vM5">
                                                     <rect key="frame" x="9" y="0.0" width="358" height="508"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <mutableString key="text">"The first time I saw him, we were sitting at the gate for our flight to Chicago. I remember glancing over at him and thinking, Oh, wow, he's cute. When I got to my seat, I saw that the seat beside me was empty and thought, How awesome would it be if he ended up next to me?
+                                                    <string key="text">"The first time I saw him, we were sitting at the gate for our flight to Chicago. I remember glancing over at him and thinking, Oh, wow, he's cute. When I got to my seat, I saw that the seat beside me was empty and thought, How awesome would it be if he ended up next to me?
 
 Sure enough, a family in his row wanted to sit together so he asked the flight attendant if he could take the empty seat beside me. We spent the entire flight discussing everything. And then, the flight landed.
 
-He asked for my number and we went our separate ways. I was certain I would never hear from him again. I thought about him often, but eventually he faded into the 'missed connections' category. A few months later, out of the blue, he sent me [a message that said] 'Happy New Year.' We hit it off like nothing ever changed.</mutableString>
+He asked for my number and we went our separate ways. I was certain I would never hear from him again. I thought about him often, but eventually he faded into the 'missed connections' category. A few months later, out of the blue, he sent me [a message that said] 'Happy New Year.' We hit it off like nothing ever changed.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -222,10 +227,24 @@ He asked for my number and we went our separate ways. I was certain I would neve
                                     <outlet property="delegate" destination="Bg7-W3-Qh6" id="ofF-sw-8ot"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qbu-Fd-r1w">
+                                <rect key="frame" x="169" y="232.5" width="37" height="37"/>
+                                <color key="color" red="0.50367540119999998" green="0.1122529283" blue="0.14823693039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.50367540119999998" green="0.1122529283" blue="0.14823693039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qbu-Fd-r1w" firstAttribute="centerY" secondItem="FWn-BN-Qjs" secondAttribute="centerY" id="2ri-ER-hDo"/>
                             <constraint firstAttribute="trailing" secondItem="jaf-z7-zKY" secondAttribute="trailing" id="8eu-cI-r94"/>
+                            <constraint firstItem="qbu-Fd-r1w" firstAttribute="centerX" secondItem="FWn-BN-Qjs" secondAttribute="centerX" id="MO4-T3-byy"/>
                             <constraint firstItem="jaf-z7-zKY" firstAttribute="leading" secondItem="Bld-vO-LzQ" secondAttribute="leading" id="OKg-SY-ctP"/>
                             <constraint firstItem="jaf-z7-zKY" firstAttribute="top" secondItem="Bld-vO-LzQ" secondAttribute="top" id="cR9-8V-gaU"/>
                             <constraint firstItem="jaf-z7-zKY" firstAttribute="bottom" secondItem="FWn-BN-Qjs" secondAttribute="bottom" id="vEu-mr-rjy"/>
@@ -235,6 +254,7 @@ He asked for my number and we went our separate ways. I was certain I would neve
                     <navigationItem key="navigationItem" title="Gallery" id="LKw-1C-1JX"/>
                     <connections>
                         <outlet property="collectionView" destination="jaf-z7-zKY" id="TRm-Ya-JA7"/>
+                        <outlet property="loader" destination="qbu-Fd-r1w" id="mar-8o-mzO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdU-4g-nVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -447,7 +467,7 @@ He asked for my number and we went our separate ways. I was certain I would neve
     <resources>
         <image name="gal-25" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
-        <image name="logo1" width="1939" height="1401"/>
+        <image name="logo2" width="228" height="228"/>
         <image name="story-25" width="25" height="25"/>
     </resources>
 </document>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,15 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="HkR-7T-Aav">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="88" y="243.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ULt-qm-fl0"/>
+                                    <constraint firstAttribute="height" constant="200" id="aL9-eW-P1V"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.56078431370000004" green="0.1450980392" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HkR-7T-Aav" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="GKZ-dU-cEC"/>
-                            <constraint firstItem="HkR-7T-Aav" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="P3v-4k-i1L"/>
-                            <constraint firstItem="HkR-7T-Aav" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="RX8-Kt-vV6"/>
-                            <constraint firstAttribute="trailing" secondItem="HkR-7T-Aav" secondAttribute="trailing" id="m54-RX-pSd"/>
+                            <constraint firstItem="HkR-7T-Aav" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="5XI-gO-JKr"/>
+                            <constraint firstItem="HkR-7T-Aav" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TEB-Bw-MRX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo2" width="2500" height="1819"/>
+        <image name="logo2" width="228" height="228"/>
     </resources>
 </document>

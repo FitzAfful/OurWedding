@@ -73,6 +73,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.11)
   - GTMSessionFetcher/Full (1.1.11):
     - GTMSessionFetcher/Core (= 1.1.11)
+  - INSPhotoGallery (1.2.5)
   - "NSDate+TimeAgo (1.0.6)"
   - Nuke (5.2)
   - Protobuf (3.3.0)
@@ -89,6 +90,7 @@ DEPENDENCIES:
   - Google
   - Google/Core
   - GoogleSignIn
+  - INSPhotoGallery
   - "NSDate+TimeAgo"
   - Nuke (~> 5.2)
 
@@ -110,6 +112,7 @@ SPEC REPOS:
     - GoogleToolboxForMac
     - GTMOAuth2
     - GTMSessionFetcher
+    - INSPhotoGallery
     - "NSDate+TimeAgo"
     - Nuke
     - Protobuf
@@ -131,10 +134,11 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
+  INSPhotoGallery: 8bd5b434e70d06dd698085f8e865f6602d82014b
   "NSDate+TimeAgo": 35601c619b2d59290055e4fe76e61d97677a2360
   Nuke: 5f420c4637415f979c83afb35e73176dd03232d9
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
 
-PODFILE CHECKSUM: cf408ae281c058665d0148d7e4c48ae6ec61fd73
+PODFILE CHECKSUM: d080b0945c5167a241ea369e1c5093c6fecf740f
 
 COCOAPODS: 1.5.3

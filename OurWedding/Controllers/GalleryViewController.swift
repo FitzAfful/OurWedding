@@ -8,11 +8,19 @@
 
 import UIKit
 import DTPhotoViewerController
+import Firebase
+import Nuke
+import INSPhotoGallery
+
 
 class GalleryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,  UICollectionViewDelegateFlowLayout{
 	
 	let reuseIdentifier = "cell"
-	var images = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jgp","7.jgp","8.jgp","9.jgp","10.jgp","11.jgp","12.jgp","13.jgp","a1.jpg","a2.jpg","a3.jpg","a4.jpg","a5.jpg"]
+	var images:[String] = []
+	@IBOutlet weak var loader: UIActivityIndicatorView!
+	var user = FIRAuth.auth()?.currentUser
+	let userProfiles = FIRDatabase.database().reference().child("posts")
+	var photos: [INSPhotoViewable] = []
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	
@@ -26,7 +34,56 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
 		let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 		layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
 		collectionView.collectionViewLayout = layout
+	
+		_ = self.userProfiles.observeSingleEvent(of: .value, with: { (snapshot) in
+			self.images.removeAll()
+			if let snapshotValue = snapshot.children.allObjects as? [FIRDataSnapshot]{
+				for snapDict in snapshotValue{
+					let dict = snapDict.value as! Dictionary<String, AnyObject>
+					let post = Post()
+					post.postid = Int.init(snapDict.key)!
+					post.setValuesForKeys(dict)
+					self.images.append(post.postimgurl)
+				}
+				self.images = self.images.reversed()
+				self.photos.removeAll()
+				for item in self.images{
+					let photo = INSPhoto(imageURL: URL(string: item), thumbnailImage: UIImage(named: "gal-25.png")!)
+					self.photos.append(photo)
+				}
+				self.collectionView.isHidden = false
+				self.loader.isHidden = true
+				self.collectionView.reloadData()
+			}
+		})
 	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		_ = self.userProfiles.observeSingleEvent(of: .value, with: { (snapshot) in
+			self.images.removeAll()
+			if let snapshotValue = snapshot.children.allObjects as? [FIRDataSnapshot]{
+				for snapDict in snapshotValue{
+					let dict = snapDict.value as! Dictionary<String, AnyObject>
+					let post = Post()
+					post.postid = Int.init(snapDict.key)!
+					post.setValuesForKeys(dict)
+					self.images.append(post.postimgurl)
+				}
+				self.images = self.images.reversed()
+				self.photos.removeAll()
+				for item in self.images{
+					let photo = INSPhoto(imageURL: URL(string: item), thumbnailImage: UIImage(named: "logo2.png")!)
+					self.photos.append(photo)
+				}
+				self.collectionView.isHidden = false
+				self.loader.isHidden = true
+				self.collectionView.reloadData()
+			}
+		})
+	}
+	
 	
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,8 +94,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomepageCell
-		cell.img.image = UIImage(named: self.images[indexPath.item])
-		
+		Nuke.loadImage(with: URL(string: self.images[indexPath.item])!, into: cell.img)
 		
 		return cell
 	}
@@ -46,13 +102,12 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
 	// MARK: - UICollectionViewDelegate protocol
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		// handle tap events
-		
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HomepageCell
-		if let viewController = DTPhotoViewerController(referencedView: cell.img, image: UIImage(named: self.images[indexPath.item])) {
-			self.present(viewController, animated: true, completion: nil)
-		}
+		let currentPhoto = photos[indexPath.row]
+		let galleryPreview = INSPhotosViewController(photos: photos, initialPhoto: currentPhoto, referenceView: cell)
+		self.present(galleryPreview, animated: true, completion: nil)
 	}
+	
 	
 	
 	

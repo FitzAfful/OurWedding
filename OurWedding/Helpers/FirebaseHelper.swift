@@ -20,8 +20,7 @@ class FirebaseHelper: NSObject {
 	func signIn(credential: FIRAuthCredential, viewController: SignInController){
 		FIRAuth.auth()?.signIn(with: credential) { (user, error) in
 			
-			print(error.debugDescription)
-			print("User Signed Into Firebase")
+			print("User has been signed into Firebase")
 			
 			if(error != nil){
 				let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .actionSheet)
