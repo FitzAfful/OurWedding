@@ -1,5 +1,5 @@
 # OurWedding
-A simple iOS application built in Swift that allows people who were at your wedding to post pictures they took, your own gallery and a story of how you met your partner. Built with Firebase Storage and Realtime Database / cloudinary
+An iOS application built in Swift that allows people who were at your wedding to post pictures they took, your own gallery and a story of how you met your partner. Built with Firebase Storage and Realtime Database / cloudinary
 
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c0a71e8f319041db9852bab11e91cfc9)](https://www.codacy.com/app/fitzafful/OurWedding?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=FitzAfful/OurWedding&amp;utm_campaign=Badge_Grade) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
