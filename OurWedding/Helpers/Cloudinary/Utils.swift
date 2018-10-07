@@ -47,11 +47,11 @@ public func exportVideoDataForExportSession(_ exportSession: AVAssetExportSessio
     exportSession.outputURL = URL(fileURLWithPath: tempFilePath)
     
     exportSession.exportAsynchronously() {
-        log.debug("Video export completed, status: \(exportSession.status), error: \(exportSession.error)")
+        log.debug("Video export completed, status: \(exportSession.status), error: \(exportSession.error!)")
         
         if exportSession.status == .completed {
             log.verbose("Video encoding OK, the process took \(-startTime.timeIntervalSinceNow) seconds")
-            log.verbose("Video written to URL: \(exportSession.outputURL)")
+            log.verbose("Video written to URL: \(exportSession.outputURL!)")
             
             runOnMainThread {
                 // Callback on main thread

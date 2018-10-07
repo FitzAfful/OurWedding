@@ -32,7 +32,7 @@ public extension UIGestureRecognizer {
     @objc fileprivate func invokeCallback(_ recognizer: UIGestureRecognizer) {
         if let callbackWithRecognizer = InvokeCallback.invokeCallback as? ((UIGestureRecognizer) -> Void) {
             callbackWithRecognizer(recognizer)
-        } else if let callback = InvokeCallback.invokeCallback as? ((Void) -> Void) {
+		} else if let callback = InvokeCallback.invokeCallback as? (() -> Void) {
             callback()
         }
     }
@@ -56,7 +56,7 @@ public extension UIGestureRecognizer {
 
      - parameter callback: the callback closure that is called when a gesture is recognized.
      */
-    convenience init(callback: @escaping ((Void) -> Void)) {
+	convenience init(callback: @escaping (() -> Void)) {
         self.init()
 
         InvokeCallback.invokeCallback = callback

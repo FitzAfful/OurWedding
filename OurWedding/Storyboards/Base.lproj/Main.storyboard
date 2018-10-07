@@ -20,110 +20,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="WlH-nt-urr">
-                                <rect key="frame" x="16" y="34" width="343" height="225"/>
+                                <rect key="frame" x="16" y="191" width="343" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="225" id="WOK-C5-J88"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8P-2A-6E3">
-                                <rect key="frame" x="16" y="284" width="343" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="1ck-AQ-Xm2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RrG-hu-npM">
-                                <rect key="frame" x="16" y="348" width="343" height="61"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6D-kJ-wQX">
-                                        <rect key="frame" x="142" y="0.0" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="BN8-xM-8EP"/>
-                                            <constraint firstAttribute="height" constant="60" id="HS4-m7-Niw"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="google"/>
-                                        <connections>
-                                            <action selector="goLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pw8-h8-9Y0"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="i6D-kJ-wQX" firstAttribute="centerX" secondItem="RrG-hu-npM" secondAttribute="centerX" id="2nA-he-TMK"/>
-                                    <constraint firstAttribute="height" constant="61" id="523-Dm-NjL"/>
-                                    <constraint firstItem="i6D-kJ-wQX" firstAttribute="top" secondItem="RrG-hu-npM" secondAttribute="top" id="9di-vs-ydd"/>
-                                </constraints>
-                            </view>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VN8-pp-41X" customClass="MyTextField" customModule="OurWedding" customModuleProvider="target">
-                                <rect key="frame" x="16" y="431" width="343" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="0YS-Qd-DaC"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" red="0.76863527297973633" green="0.60578995943069458" blue="0.42296451330184937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                        <color key="value" red="0.50367540119999998" green="0.1122529283" blue="0.14823693039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                        <color key="value" red="0.76863527300000001" green="0.60578995940000002" blue="0.42296451330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
-                                        <color key="value" red="0.50367540119999998" green="0.1122529283" blue="0.14823693039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="errorTextColor">
-                                        <color key="value" red="0.7843137255" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="errorLineColor">
-                                        <color key="value" red="0.7843137255" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rce-yM-wgO">
-                                <rect key="frame" x="88" y="497" width="200" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rce-yM-wgO">
+                                <rect key="frame" x="37" y="461" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.50367540119999998" green="0.1122529283" blue="0.14823693039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="Hme-f0-Gcl"/>
-                                    <constraint firstAttribute="width" constant="200" id="sJS-Rs-tKL"/>
+                                    <constraint firstAttribute="height" constant="50" id="Hme-f0-Gcl"/>
+                                    <constraint firstAttribute="width" constant="300" id="sJS-Rs-tKL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                 <color key="tintColor" red="0.99987119440000005" green="0.99998223779999995" blue="0.99984109399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Go"/>
+                                <state key="normal" title="Sign in with Google"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d8y-vC-u4J"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WlH-nt-urr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7tD-h3-ozg"/>
+                            <constraint firstItem="Rce-yM-wgO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CMm-1z-gWw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WlH-nt-urr" secondAttribute="trailing" constant="16" id="DcU-fB-dp5"/>
-                            <constraint firstItem="N8P-2A-6E3" firstAttribute="leading" secondItem="WlH-nt-urr" secondAttribute="leading" id="Fbl-ym-J2O"/>
-                            <constraint firstItem="N8P-2A-6E3" firstAttribute="trailing" secondItem="WlH-nt-urr" secondAttribute="trailing" id="Lg0-V3-hZ4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VN8-pp-41X" secondAttribute="trailing" constant="16" id="LqI-rK-1Xk"/>
-                            <constraint firstItem="N8P-2A-6E3" firstAttribute="top" secondItem="WlH-nt-urr" secondAttribute="bottom" constant="25" id="N2D-am-QU4"/>
-                            <constraint firstItem="Rce-yM-wgO" firstAttribute="top" secondItem="VN8-pp-41X" secondAttribute="bottom" constant="17" id="OHi-3z-wU0"/>
-                            <constraint firstItem="RrG-hu-npM" firstAttribute="top" secondItem="N8P-2A-6E3" secondAttribute="bottom" constant="8" id="SgK-dn-JZd"/>
-                            <constraint firstItem="RrG-hu-npM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="UqN-Lw-QqY"/>
-                            <constraint firstItem="VN8-pp-41X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WPg-WP-Qbw"/>
-                            <constraint firstItem="WlH-nt-urr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="cNs-Sn-6AY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RrG-hu-npM" secondAttribute="trailing" constant="16" id="kUF-fh-xf3"/>
-                            <constraint firstItem="VN8-pp-41X" firstAttribute="top" secondItem="RrG-hu-npM" secondAttribute="bottom" constant="22" id="kqx-6N-tIc"/>
-                            <constraint firstItem="Rce-yM-wgO" firstAttribute="centerX" secondItem="VN8-pp-41X" secondAttribute="centerX" id="wTP-OH-LGR"/>
+                            <constraint firstItem="Rce-yM-wgO" firstAttribute="top" secondItem="WlH-nt-urr" secondAttribute="bottom" constant="45" id="YN6-fO-owb"/>
+                            <constraint firstItem="WlH-nt-urr" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="bKH-iF-zQt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="goButton" destination="i6D-kJ-wQX" id="uLO-Qs-vE4"/>
+                        <outlet property="goButton" destination="Rce-yM-wgO" id="qOA-dG-h3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -271,7 +205,7 @@ Their wedding will take place on the 16th of December, 2017 and they look forwar
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ikZ-FU-dWa">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ikZ-FU-dWa">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -509,7 +443,6 @@ Their wedding will take place on the 16th of December, 2017 and they look forwar
     </scenes>
     <resources>
         <image name="gal-25" width="25" height="25"/>
-        <image name="google" width="512" height="512"/>
         <image name="home" width="25" height="25"/>
         <image name="logo1" width="1939" height="1401"/>
         <image name="story-25" width="25" height="25"/>

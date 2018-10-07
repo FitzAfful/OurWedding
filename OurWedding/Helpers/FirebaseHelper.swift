@@ -1,13 +1,12 @@
 //
 //  FirebaseHelper.swift
-//  DriveHer
+//  OurWedding
 //
 //  Created by Fitzgerald Afful on 04/11/2017.
-//  Copyright © 2017 OasisWebsoft. All rights reserved.
+//  Copyright © 2018 Fitzgerald Afful. All rights reserved.
 //
 
 import Foundation
-import Alamofire
 import Google
 import Firebase
 import FirebaseDatabase
@@ -45,9 +44,8 @@ class FirebaseHelper: NSObject {
 						UserDefaults.standard.set(user?.photoURL!.absoluteString, forKey: "url")
 					}
 					
-									print("Navigation Controller")
-									FTIndicator.dismissProgress()
-									viewController.moveToNavigationController()
+					FTIndicator.dismissProgress()
+					viewController.moveToNavigationController()
 				})
 			}
 		}

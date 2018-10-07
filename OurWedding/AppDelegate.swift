@@ -3,7 +3,7 @@
 //  OurWedding
 //
 //  Created by Fitzgerald Afful on 14/12/2017.
-//  Copyright © 2017 oasiswebsoft. All rights reserved.
+//  Copyright © 2018 Fitzgerald Afful. All rights reserved.
 //
 import UIKit
 import GoogleSignIn

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		30FE43C0C3C51F1243DAB983 /* Pods_OurWedding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E8D4BE48C357665FE7B41A /* Pods_OurWedding.framework */; };
 		84D23A6B1FE2F41100948F2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D23A6A1FE2F41100948F2B /* AppDelegate.swift */; };
-		84D23A6D1FE2F41100948F2B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D23A6C1FE2F41100948F2B /* ViewController.swift */; };
 		84D23A701FE2F41100948F2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D23A6E1FE2F41100948F2B /* Main.storyboard */; };
 		84D23A721FE2F41100948F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D23A711FE2F41100948F2B /* Assets.xcassets */; };
 		84D23A751FE2F41100948F2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D23A731FE2F41100948F2B /* LaunchScreen.storyboard */; };
@@ -87,7 +86,6 @@
 		6334D6B914C939455EC97A6B /* Pods-RandM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandM.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandM/Pods-RandM.release.xcconfig"; sourceTree = "<group>"; };
 		84D23A671FE2F41100948F2B /* OurWedding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OurWedding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D23A6A1FE2F41100948F2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84D23A6C1FE2F41100948F2B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84D23A6F1FE2F41100948F2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84D23A711FE2F41100948F2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84D23A741FE2F41100948F2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -215,26 +213,12 @@
 		84D23A691FE2F41100948F2B /* OurWedding */ = {
 			isa = PBXGroup;
 			children = (
-				84F700C721697FE200F70CDC /* OurWedding-Bridging-Header.h */,
-				84D23B2F1FE398C600948F2B /* GoogleService-Info.plist */,
-				84D23A761FE2F41100948F2B /* Info.plist */,
-				84D23AA21FE30A4600948F2B /* AddPostController.swift */,
 				84D23A6A1FE2F41100948F2B /* AppDelegate.swift */,
-				84D23B2D1FE3958800948F2B /* FirebaseHelper.swift */,
-				84D23AAA1FE344D200948F2B /* GalleryViewController.swift */,
-				84D23A9A1FE3054300948F2B /* HomeCell.swift */,
-				84D23AB01FE3815300948F2B /* HomepageCell.swift */,
-				84D23AA81FE344C600948F2B /* OurStoryViewController.swift */,
-				84D23AA41FE344AF00948F2B /* PostsViewController.swift */,
-				84D23B2B1FE3933D00948F2B /* SignInController.swift */,
-				84D23AAC1FE344F600948F2B /* TabController.swift */,
-				84D23A6C1FE2F41100948F2B /* ViewController.swift */,
-				84D23A711FE2F41100948F2B /* Assets.xcassets */,
-				84D23A9B1FE3054300948F2B /* HomeCell.xib */,
-				84D23AB11FE3815400948F2B /* HomepageCell.xib */,
+				84F700C9216990F500F70CDC /* Cells */,
+				84F700CA2169911900F70CDC /* Controllers */,
 				84F700C8216982BF00F70CDC /* Helpers */,
-				84D23A731FE2F41100948F2B /* LaunchScreen.storyboard */,
-				84D23A6E1FE2F41100948F2B /* Main.storyboard */,
+				84F700CC2169918200F70CDC /* Others */,
+				84F700CB2169916500F70CDC /* Storyboards */,
 			);
 			path = OurWedding;
 			sourceTree = "<group>";
@@ -356,12 +340,57 @@
 		84F700C8216982BF00F70CDC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				84D23B2D1FE3958800948F2B /* FirebaseHelper.swift */,
 				84D23AFC1FE389F900948F2B /* XCGLogger */,
 				84D23AFB1FE3893000948F2B /* Cloudinary */,
 				84D23AAE1FE371B200948F2B /* ZKCarousel.swift */,
 				84D23A981FE2FA5C00948F2B /* MyTextField.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		84F700C9216990F500F70CDC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84D23A9A1FE3054300948F2B /* HomeCell.swift */,
+				84D23AB01FE3815300948F2B /* HomepageCell.swift */,
+				84D23A9B1FE3054300948F2B /* HomeCell.xib */,
+				84D23AB11FE3815400948F2B /* HomepageCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		84F700CA2169911900F70CDC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84D23AA21FE30A4600948F2B /* AddPostController.swift */,
+				84D23AAA1FE344D200948F2B /* GalleryViewController.swift */,
+				84D23AA81FE344C600948F2B /* OurStoryViewController.swift */,
+				84D23AA41FE344AF00948F2B /* PostsViewController.swift */,
+				84D23B2B1FE3933D00948F2B /* SignInController.swift */,
+				84D23AAC1FE344F600948F2B /* TabController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84F700CB2169916500F70CDC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				84D23A731FE2F41100948F2B /* LaunchScreen.storyboard */,
+				84D23A6E1FE2F41100948F2B /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		84F700CC2169918200F70CDC /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				84F700C721697FE200F70CDC /* OurWedding-Bridging-Header.h */,
+				84D23B2F1FE398C600948F2B /* GoogleService-Info.plist */,
+				84D23A761FE2F41100948F2B /* Info.plist */,
+				84D23A711FE2F41100948F2B /* Assets.xcassets */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		A8979F6F5BD224ED36568E74 /* Frameworks */ = {
@@ -403,7 +432,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = oasiswebsoft;
 				TargetAttributes = {
 					84D23A661FE2F41100948F2B = {
@@ -551,7 +580,6 @@
 				84D23AE01FE3885800948F2B /* DoubleExtensions.swift in Sources */,
 				84D23B291FE389FA00948F2B /* LogDetails.swift in Sources */,
 				84D23AB91FE387CB00948F2B /* QvikCloudinary.swift in Sources */,
-				84D23A6D1FE2F41100948F2B /* ViewController.swift in Sources */,
 				84D23AE61FE3885800948F2B /* IntExtensions.swift in Sources */,
 				84D23AF41FE3885800948F2B /* NSLayoutConstraintExtensions.swift in Sources */,
 				84D23AF01FE3885800948F2B /* StringExtensions.swift in Sources */,
@@ -628,6 +656,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -635,6 +664,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -685,6 +715,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -692,6 +723,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -729,12 +761,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JPYP7AHEW;
-				INFOPLIST_FILE = "$(SRCROOT)/OurWedding/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/OurWedding/Others/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fitzafful.OurWedding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OurWedding/OurWedding-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OurWedding/Others/OurWedding-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -749,12 +781,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JPYP7AHEW;
-				INFOPLIST_FILE = "$(SRCROOT)/OurWedding/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/OurWedding/Others/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fitzafful.OurWedding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OurWedding/OurWedding-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OurWedding/Others/OurWedding-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

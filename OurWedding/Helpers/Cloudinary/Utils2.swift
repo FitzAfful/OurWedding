@@ -27,7 +27,7 @@ import Foundation
  
  - parameter task: Task to be executed
 */
-public func runInBackground(_ task: @escaping ((Void) -> Void)) {
+public func runInBackground(_ task: @escaping (() -> Void)) {
     DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async(execute: task)
 }
 
@@ -37,7 +37,7 @@ public func runInBackground(_ task: @escaping ((Void) -> Void)) {
  
  - parameter task: Task to be executed
 */
-public func runOnMainThread(_ task: @escaping ((Void) -> Void)) {
+public func runOnMainThread(_ task: @escaping (() -> Void)) {
     if Thread.isMainThread {
         // Already on main UI thread - call directly
         task()
@@ -52,6 +52,6 @@ public func runOnMainThread(_ task: @escaping ((Void) -> Void)) {
  - parameter delay: Delay in seconds
  - parameter task: Task to be executed
 */
-public func runOnMainThreadAfter(delay: TimeInterval, task: @escaping ((Void) -> Void)) {
+public func runOnMainThreadAfter(delay: TimeInterval, task: @escaping (() -> Void)) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: task)
 }

@@ -64,7 +64,7 @@ open class ReadWriteLock {
     }
     
     /// Executes a task within a write lock
-    @discardableResult open func withWriteLock<T>(_ task: ((Void) -> T)) -> T {
+	@discardableResult open func withWriteLock<T>(_ task: (() -> T)) -> T {
         defer {
             unlock()
         }
@@ -74,7 +74,7 @@ open class ReadWriteLock {
     }
     
     /// Executes a task within a read lock
-    @discardableResult open func withReadLock<T>(_ task: ((Void) -> T)) -> T {
+	@discardableResult open func withReadLock<T>(_ task: (() -> T)) -> T {
         defer {
             unlock()
         }

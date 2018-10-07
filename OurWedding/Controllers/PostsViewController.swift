@@ -3,7 +3,7 @@
 //  OurWedding
 //
 //  Created by Fitzgerald Afful on 14/12/2017.
-//  Copyright © 2017 oasiswebsoft. All rights reserved.
+//  Copyright © 2018 Fitzgerald Afful. All rights reserved.
 //
 
 import UIKit
@@ -107,14 +107,9 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 		cell.userImageView.image = nil
 		cell.postImageView.image = nil
 		print(contact.postimgurl)
-		if(contact.photourl != nil){
-			Nuke.loadImage(with: (URL(string: contact.photourl)!), into: cell.userImageView)
-			makingRoundedImageProfileWithRoundedBorder(imageView: cell.userImageView)
-		}
-		
-		if(contact.postimgurl != nil){
-			Nuke.loadImage(with: (URL(string: contact.postimgurl)!), into: cell.postImageView)
-		}
+		Nuke.loadImage(with: (URL(string: contact.photourl)!), into: cell.userImageView)
+		makingRoundedImageProfileWithRoundedBorder(imageView: cell.userImageView)
+		Nuke.loadImage(with: (URL(string: contact.postimgurl)!), into: cell.postImageView)
 		
 		cell.selectionStyle = .none
 		return cell

@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>324809196676-7m0u1qin1cnkgj405v69vvmjs14f81bj.apps.googleusercontent.com</string>
+	<string>950378372987-vqfgb5fp58kic66cr3rp8f7frku43hf5.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.324809196676-7m0u1qin1cnkgj405v69vvmjs14f81bj</string>
+	<string>com.googleusercontent.apps.950378372987-vqfgb5fp58kic66cr3rp8f7frku43hf5</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBHF_kF6SKA4P-TA3VyKPjGeQG9YwO60PE</string>
+	<string>AIzaSyD0MlT9PS03sYVscmMtbtTwEeJfQQFUkJs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>324809196676</string>
+	<string>950378372987</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>oasiswebsoft.randm</string>
+	<string>fitzafful.OurWedding</string>
 	<key>PROJECT_ID</key>
-	<string>randmapp-cb2d1</string>
+	<string>ourwedding-927da</string>
 	<key>STORAGE_BUCKET</key>
-	<string>randmapp-cb2d1.appspot.com</string>
+	<string>ourwedding-927da.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:324809196676:ios:72767ae4f6b16004</string>
+	<string>1:950378372987:ios:5cf5976f7151a2b5</string>
 	<key>DATABASE_URL</key>
-	<string>https://randmapp-cb2d1.firebaseio.com</string>
+	<string>https://ourwedding-927da.firebaseio.com</string>
 </dict>
 </plist>
